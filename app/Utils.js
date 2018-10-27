@@ -1,5 +1,3 @@
-import Constants from './Constants'
-
 const getColor = (color, opacity) => {
   opacity = opacity || 1
 
@@ -40,7 +38,7 @@ const getDateRangeForPeriod = (period) => {
 
 const getVideoFrameURL = (baseURL, id, frame) => {
   baseURL = baseURL || 'https://www.webpagetest.org'
-  
+
   const filename = frame._i || `frame_${leftPad(frame._t / 100, 4)}.jpg`
 
   return `${baseURL}/getfile.php?test=${id}&video=video_1&file=${filename}`
@@ -48,7 +46,7 @@ const getVideoFrameURL = (baseURL, id, frame) => {
 
 const leftPad = (input, length, pad) => {
   pad = pad || '0'
-  
+
   let inputStr = input.toString()
   let lengthDiff = length - inputStr.length
 
@@ -71,10 +69,18 @@ const traverseObject = (obj, callback, path) => {
   }
 }
 
+const getTimestampsByInterval = (timestamps, dateFrom, dateTo) => {
+  return Object.keys(timestamps).filter(timestamp => {
+    const timestampMillis = timestamp * 1000
+
+    return (timestampMillis >= dateFrom) && (timestampMillis <= dateTo)
+  })
+}
+
 export {
   getColor,
   getDateRangeForPeriod,
   getVideoFrameURL,
-  leftPad,
+  getTimestampsByInterval,
   traverseObject
 }
