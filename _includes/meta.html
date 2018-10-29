@@ -4,7 +4,7 @@
 
 {% assign currentProfile = '' %}{% for profile in site.profiles %}{% if page.slug %}{% if page.slug == profile.slug %}{% assign currentProfile = profile.name %}{% endif %}{% else %}{% if profile.default %}{% assign currentProfile = profile.name %}{% endif %}{% endif %}{% endfor %}
 
-{% assign pageTitle = 'SpeedTracker' %}
+{% assign pageTitle = 'Jet.com SpeedTracker' %}
 
 {% if currentProfile != '' %}
   {% assign pageTitle = pageTitle | append: ' - ' | append: currentProfile %}
