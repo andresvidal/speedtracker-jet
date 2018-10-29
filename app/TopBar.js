@@ -19,8 +19,7 @@ class TopBar extends React.Component {
         <div className='c-TopBar__inner'>
           <a href='/'>
             // <Logo width={40} />
-            // <LogoTitle width={140} />
-            <h2 style='display:inline-block'>Jet.com SpeedTracking</h2>
+            <LogoTitle width={140} />
           </a>
           <div className='c-TopBar__nav'>
             <p>
