@@ -4,7 +4,7 @@ import { render } from 'react-dom' // eslint-disable-line no-unused-vars
 class LogoTitle extends React.Component {
   render () {
     return (
-      <h2 style='display:inline-block'>Jet.com SpeedTracking</h2>
+      <h2 className='c-LogoTitle'>Jet.com SpeedTracking</h2>
       
       // <svg className='c-LogoTitle'
       //   version='1'
