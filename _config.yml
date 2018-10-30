@@ -15,6 +15,7 @@ exclude:
   - package.json
   - speedtracker.yml
   - webpack.config.js
+  - run_profiles.js
 
 collections:
   profiles:
