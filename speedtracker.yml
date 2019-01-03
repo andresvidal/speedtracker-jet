@@ -37,7 +37,8 @@
 #                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-encryptionKey: "b070fc06d7ae70aeff24"
+#encryptionKey: "b070fc06d7ae70aeff24"
+encryptionKey: "71c3645cfa365eeba32e0779a7f8e280"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -50,8 +51,8 @@ encryptionKey: "b070fc06d7ae70aeff24"
 #                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-wptKey: "9b3bbf4680be67a8ff24480cdb05f58ae0e498f46f98b2029ee635c6b31440623a40"
-
+#wptKey: "9b3bbf4680be67a8ff24480cdb05f58ae0e498f46f98b2029ee635c6b31440623a40"
+wptKey: "5a88271ba12158afe178062ff1f8e1dd04bb9dd70755de38b0d171abb3fc5ab70c6b"
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #                                                                             #
