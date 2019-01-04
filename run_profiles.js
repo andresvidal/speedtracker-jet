@@ -4,6 +4,7 @@ var fs = require('fs');
  
 let api_path = 'https://api.speedtracker.org/v1/test/'
 let path = "_profiles"
+let cmd_profile_slugs = process.argv.slice(2)
 
 let username = process.env.ST_GITHUB_USERNAME || 'username'
 let repo = process.env.ST_GITHUB_REPOSITORY || 'repository'
@@ -26,19 +27,25 @@ async function asyncForEach(array, callback) {
   }
 }
 
+async function run_profile(profile_slug){
+    url = `${api_path}${username}/${repo}/${branch}/${profile_slug}?key=${key}`;
+    await console.log(`Running ${url}`)
+    await fetch(url)
+            .then(r=>r.json())
+            .then(json=>console.log(json));
+}
+
 fs.readdir(path, function(err, items) {
     const start = async () => {
         await asyncForEach(items, async (item) => {
             if (item.endsWith('.html')){
                 profile_slug = item.replace('.html','')
-                url = `${api_path}${username}/${repo}/${branch}/${profile_slug}?key=${key}`;
-                
-                await console.log(`Running ${url}`)
-
-                await fetch(url)
-                    .then(r=>r.json())
-                    .then(json=>console.log(json));
-            };
+                if (cmd_profile_slugs.length < 1){
+                    await run_profile(profile_slug)
+                } else if (cmd_profile_slugs.indexOf(profile_slug) > -1) {
+                    await run_profile(profile_slug)
+                }
+            }
         });
     }
     start();
