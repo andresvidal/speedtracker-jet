@@ -3,7 +3,7 @@ var fetch = require('node-fetch');
 var fs = require('fs');
  
 // let api_path = 'https://api.speedtracker.org/v1/test/'
-let api_path = 'http://localhost:8089/v1/test/'
+let api_path = 'https://apps.andresvidal.com/speedtracker/v1/test/'
 
 let path = "_profiles"
 let cmd_profile_slugs = process.argv.slice(2)
