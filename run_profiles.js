@@ -2,8 +2,7 @@
 var fetch = require('node-fetch');
 var fs = require('fs');
  
-// let api_path = 'https://api.speedtracker.org/v1/test/'
-let api_path = 'https://api.andresvidal.org/speedtracker/v1/test/'
+let api_default = 'https://api.speedtracker.org/v1/test/'
 
 let path = "_profiles"
 let cmd_profile_slugs = process.argv.slice(2)
@@ -12,6 +11,7 @@ let username = process.env.ST_GITHUB_USERNAME || 'username'
 let repo = process.env.ST_GITHUB_REPOSITORY || 'repository'
 let branch = process.env.ST_GITHUB_BRANCH || 'master';
 let key = process.env.ST_ENCRYPTION_KEY || ''
+let api_url = process.env.ST_API_URL || api_default
 
 if (username=='username' || repo=='repository'){
     console.log("Set the following env variables first:");
@@ -19,6 +19,7 @@ if (username=='username' || repo=='repository'){
     console.log(` export ST_GITHUB_REPOSITORY=${repo}`);
     console.log(` export ST_GITHUB_BRANCH=${branch}`);
     console.log(` export ST_ENCRYPTION_KEY=${key}`);
+    console.log(` export ST_API_URL=${api_url}`);
     console.log("Usage: node run_profiles.js");
     process.exit(-1);
 }
@@ -30,7 +31,7 @@ async function asyncForEach(array, callback) {
 }
 
 async function run_profile(profile_slug){
-    url = `${api_path}${username}/${repo}/${branch}/${profile_slug}?key=${key}`;
+    url = `${api_url}${username}/${repo}/${branch}/${profile_slug}?key=${key}`;
     await console.log(`Running ${url}`)
     await fetch(url)
             .then(r=>r.json())
