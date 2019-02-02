@@ -116,14 +116,28 @@ export default {
     },
     TTFB: {
       color: [80, 48, 71],
-      name: 'Back-end',
+      name: 'First Byte (Back-end)',
       transform: (value) => (value / 1000).toFixed(2),
       unit: 's',
       description: 'The time it takes for the server to respond with the first byte of the response (Time To First Byte)'
     },
+    TTFI: {
+      color: [247, 81, 61],
+      name: 'First Interactive',
+      transform: (value) => (value / 1000).toFixed(2),
+      unit: 's',
+      description: 'This is a newer metric and reports when the page is first expected to be usable and will respond to input quickly (with the possibility of slow responses as more content loads).'
+    },
     visualComplete: {
       color: [243, 202, 64],
       name: 'Visually complete',
+      transform: (value) => (value / 1000).toFixed(2),
+      unit: 's',
+      description: 'The time it takes for the page to be fully visually populated'
+    },
+    domInteractive: {
+      color: [243, 202, 64],
+      name: 'DOM Interactive',
       transform: (value) => (value / 1000).toFixed(2),
       unit: 's',
       description: 'The time it takes for the page to be fully visually populated'
