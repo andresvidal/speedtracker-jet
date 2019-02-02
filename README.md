@@ -48,6 +48,22 @@
   npm run build
   ```
 
+### Use Jekyll in Docker for local development
+
+Develop locally and test in Docker. Run th following to build.
+
+```
+export JEKYLL_VERSION=3.8
+
+docker run --rm --volume="$PWD:/srv/jekyll" -p 4820:4820 -it jekyll/jekyll:$JEKYLL_VERSION jekyll build
+```
+
+Run the following to serve local files in port 4820. Visit http://localhost:4820
+
+```
+docker run --rm --volume="$PWD:/srv/jekyll" -p 4820:4820 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve
+```
+
 ---
 
 ## Contributors
