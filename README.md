@@ -50,7 +50,7 @@
 
 ### Use Jekyll in Docker for local development
 
-Develop locally and test in Docker. Run th following to build.
+Develop locally and test in Docker. Run the following to build.
 
 ```
 export JEKYLL_VERSION=3.8
