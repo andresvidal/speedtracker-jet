@@ -5,3 +5,6 @@ _site/
 node_modules/*
 npm-debug.log
 results/*/*
+
+wpt_temp/*
+.ipynb_checkpoints
