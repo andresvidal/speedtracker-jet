@@ -1,0 +1,28 @@
+---
+# See home profile for config details.
+
+name: "JET PDP (eID 23) - Tide Pods (4G)"
+
+default: false
+
+interval: 6
+
+parameters:
+  connectivity: "4G"
+  location: "Dulles:Chrome.4G"
+  runs: 1
+  url: "https://jet.com/product/Tide-Pods-Laundry-Detergent-Ocean-Mist-81-Loads/97523c6c1c6f44c59b907da55d645909?experienceId=23"
+
+wptUrl: https://www.webpagetest.org
+
+budgets:
+  -
+    metric: SpeedIndex
+    max: 3500
+  -
+    metric: breakdown.image.bytes
+    max: 1500000
+  -
+    metric: pagespeed
+    min: 80
+---
