@@ -32,7 +32,7 @@
     "babel-core": "^6.17.0",
     "chart.js": "^2.2.2",
     "es6-promise": "^3.3.1",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^3.1.1",
     "object-path": "^0.11.2",
     "opencollective": "^1.0.3",
     "query-string": "^4.2.3",
